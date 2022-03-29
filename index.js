@@ -8,12 +8,35 @@ var textarea = document.querySelector('textarea')
 // Then apply them to elements on the page
 // YOUR CODE HERE
 
+var cookies = document.cookie
+var notes = localStorage.getItem('notes')
+
+
+textarea.textContent= notes
+
+
+//cookies name
+var nameCookie = cookies
+  .find(function(cookie){
+    return cookie.startsWith('name')
+  })
+  if (nameCookie) {
+    nameSpan.textContent = nameCookie
+  }
+
+
 formEl.onsubmit = function(e) {
   // prevents form submission
   e.preventDefault()
   // save name element's content to cookies
   // save textarea's content to localstorage
   // YOUR CODE HERE
+ 
+  localStorage.setItem('notes', notes)
+  //name stored to cookie
+  nameSpan.onblur = function() {
+    document.cookie = 'name=' + nameSpan.textContent + ";"
+  }
 
   // triggers thumbs up animation
   this.elements.save.classList.add('emoji')
@@ -23,7 +46,8 @@ clear.onclick = function() {
   // Clear textarea's value
   // Clear localstorage's content
   // YOUR CODE HERE
-
+  localStorage.clear()
+  textarea.value= '';
   // triggers thumbs up animation
   this.classList.add('emoji')
 }
