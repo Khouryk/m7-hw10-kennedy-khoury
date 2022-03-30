@@ -16,13 +16,22 @@ textarea.textContent= notes
 
 
 //cookies name
-var nameCookie = cookies
-  .find(function(cookie){
-    return cookie.startsWith('name')
+
+cookieStore.get('name')
+  .then(function(cookieObj) {
+    console.log(cookieObj)
+    if (cookieObj){
+      nameSpan.textContent= cookieObj.value
+    }
   })
-  if (nameCookie) {
-    nameSpan.textContent = nameCookie
-  }
+
+//var nameCookie = cookies
+ // .find(function(cookie){
+ //   return cookie.startsWith('name')
+ // })
+ // if (nameCookie) {
+ //   nameSpan.textContent = nameCookie
+ // }
 
 
 formEl.onsubmit = function(e) {
@@ -31,12 +40,11 @@ formEl.onsubmit = function(e) {
   // save name element's content to cookies
   // save textarea's content to localstorage
   // YOUR CODE HERE
- 
-  localStorage.setItem('notes', notes)
+  //notes= textarea.value;
+  //localStorage.setItem('notes', notes)
   //name stored to cookie
-  nameSpan.onblur = function() {
-    document.cookie = 'name=' + nameSpan.textContent + ";"
-  }
+    document.cookie = 'name=' + nameSpan.textContent
+
 
   // triggers thumbs up animation
   this.elements.save.classList.add('emoji')
