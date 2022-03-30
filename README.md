@@ -52,5 +52,6 @@ This assignment will test your ability to work with client-side storage APIs in 
 - [document.cookie on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 - [Cookies on W3 schools](https://www.w3schools.com/js/js_cookies.asp)
 
-
+## comments
+Sturggled with cookies.find and cookiesStore, but played around with it and finally got it. 
 
