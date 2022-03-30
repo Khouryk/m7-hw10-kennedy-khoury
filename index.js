@@ -12,9 +12,6 @@ var cookies = document.cookie
 var notes = localStorage.getItem('notes')
 
 
-textarea.textContent= notes
-
-
 //cookies name
 
 cookieStore.get('name')
@@ -40,8 +37,8 @@ formEl.onsubmit = function(e) {
   // save name element's content to cookies
   // save textarea's content to localstorage
   // YOUR CODE HERE
-  //notes= textarea.value;
-  //localStorage.setItem('notes', notes)
+  notes= textarea.value;
+  localStorage.setItem('notes', notes)
   //name stored to cookie
     document.cookie = 'name=' + nameSpan.textContent
 
