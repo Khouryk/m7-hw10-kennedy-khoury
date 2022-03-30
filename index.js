@@ -22,13 +22,6 @@ cookieStore.get('name')
     }
   })
 
-//var nameCookie = cookies
- // .find(function(cookie){
- //   return cookie.startsWith('name')
- // })
- // if (nameCookie) {
- //   nameSpan.textContent = nameCookie
- // }
 
 
 formEl.onsubmit = function(e) {
